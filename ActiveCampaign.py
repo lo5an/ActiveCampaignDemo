@@ -17,7 +17,7 @@ class ActiveCampaignApi:
     self.ac_key = ac_key
 
   def post(self, action, ac_body={}):
-    """ Send an action and specified body values to the Active Campaign API
+    """ Send an action and specified body values to the Active Campaign API.
     Args:
        action : a valid Active Campaign api_action parameter
        body   : other paramaters needed for that action
@@ -46,7 +46,6 @@ class ActiveCampaignApi:
       "country"       : "US",
     }
     r = self.post("address_add", address_data)
-  
   
   def create_test_list(self):
     """ Make sure we have a test list to send from
@@ -117,7 +116,7 @@ class ActiveCampaignApi:
       message_id : previously created test message
       tag        : label to apply to campaign
     """
-    # Sdate seems to want to be a future time to make sure sending gets triggered
+    # sdate seems to want to be a future time to make sure sending gets triggered
     sdate_tuple = ( datetime.datetime.now() + datetime.timedelta(minutes = 2)).timetuple()
     sdate = time.strftime('%Y-%m-%d %H:%M:%S', sdate_tuple)
   
@@ -137,6 +136,7 @@ class ActiveCampaignApi:
 
 if __name__ =="__main__": 
 
+  # Did we call the script correctly?
   if len(sys.argv) < 2:
       print("Please specify a file with credentials as the script argument.")
       sys.exit(1)
