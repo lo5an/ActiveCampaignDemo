@@ -39,10 +39,11 @@ class ActiveCampaignApi:
   
     address_data = {
       "company_name" : "Test Company",
-      "address_1"    : "123 Test Blvd",
+      "address_1"    : "1234 Test Blvd",
       "city"         : "Norman",
       "state"        : "Oklahoma",
       "zip"          : "73069",
+      "country"       : "US",
     }
     r = self.post("address_add", address_data)
   
